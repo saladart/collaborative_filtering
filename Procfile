@@ -1,1 +1,1 @@
-web: python pot.py
+web: python bot.py
