@@ -23,7 +23,7 @@ def get_message():
 @server.route("/")
 def webhook():
 	bot.remove_webhook()
-	bot.set_webhook(url='https://desolate-mesa-22550.herokuapp.com' + TOKEN)
+	bot.set_webhook(url='https://onethousandalbum-bot.herokuapp.com' + TOKEN)
 	return "!", 200
 	
 @bot.message_handler(commands=['start', 'help'])
