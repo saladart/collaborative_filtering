@@ -8,7 +8,7 @@ from datalayer.entities.album import Album
 
 # Telegram bot
 token = "1053110908:AAEiWPa7QhzX9l8bvi6-YN4ui82CpHJg1t4"
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(token=token)
 
 user_manager = UserManager()
 album_manager = AlbumManager()
@@ -17,14 +17,14 @@ album_manager = AlbumManager()
 server = Flask(__name__)
 
 @server.route('/' + token, methods=['POST'])
-def get_message():
+def getMessage():
 	bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
 	return "!", 200
 
 @server.route("/")
 def webhook():
 	bot.remove_webhook()
-	bot.set_webhook(url='https://onethousandalbum-bot.herokuapp.com' + token)
+	bot.set_webhook(url='https://onethousandalbum-bot.herokuapp.com/' + token)
 	return "!", 200
 
 @bot.message_handler(commands=['start', 'help'])
