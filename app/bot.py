@@ -16,12 +16,12 @@ album_manager = AlbumManager()
 # server
 app = Flask(__name__)
 
-@server.route('/' + token, methods=['POST'])
+@app.route('/' + token, methods=['POST'])
 def getMessage():
 	bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
 	return "!", 200
 
-@server.route("/")
+@app.route("/")
 def webhook():
 	bot.remove_webhook()
 	bot.set_webhook(url='https://onethousandalbum-bot.herokuapp.com/' + token)
