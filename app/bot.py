@@ -1,10 +1,10 @@
 import telebot
 import os
 from flask import Flask, request
-from app.datalayer.album_manager import AlbumManager
-from app.datalayer.user_manager import UserManager
-from app.datalayer.entities.user import User
-from app.datalayer.entities.album import Album
+from datalayer.album_manager import AlbumManager
+from datalayer.user_manager import UserManager
+from datalayer.entities.user import User
+from datalayer.entities.album import Album
 
 # Telegram bot
 token = "1053110908:AAEiWPa7QhzX9l8bvi6-YN4ui82CpHJg1t4"
