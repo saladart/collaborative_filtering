@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from datalayer.entities.album import Album
+from app.datalayer.entities.album import Album
 
 
 class AlbumManager(object):
