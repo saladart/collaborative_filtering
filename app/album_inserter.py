@@ -1,6 +1,7 @@
 from pymongo import MongoClient
+import os
 
-client = MongoClient("mongodb+srv://admin:admin@albums-mspmg.mongodb.net/<dbname>?retryWrites=true&w=majority")	
+client = MongoClient(os.getenv('MONGOKEY'))	
 app_db = client.app_data
 
 # collections

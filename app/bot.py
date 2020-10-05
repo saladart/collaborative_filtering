@@ -7,7 +7,7 @@ from app.datalayer.entities.user import User
 from app.datalayer.entities.album import Album
 
 # Telegram bot
-token = "1053110908:AAEiWPa7QhzX9l8bvi6-YN4ui82CpHJg1t4"
+token = os.getenv('TELEGRRAMTOKEN')
 bot = telebot.TeleBot(token=token)
 
 user_manager = UserManager()
